@@ -38,7 +38,7 @@ const isBlack = (n) => n.includes("b");
 // ===== Piano Samples =====
 const audioMap = {};
 ALL_NOTES.forEach(note => {
-    audioMap[note] = new Audio(`/piano/${note}.mp3`);
+    audioMap[note] = new Audio(`piano/${note}.mp3`);
 });
 
 function playSound(note) {
@@ -54,6 +54,7 @@ export default function App() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
     const [tempo, setTempo] = useState(1);
+
     const timerRef = useRef(null);
 
     useEffect(() => {
@@ -62,7 +63,7 @@ export default function App() {
             const cleanName = key.replace("./", "").replace(".json", "");
             return {
                 name: cleanName,
-                file: "/songs/" + key.replace("./", "")
+                file: "songs/" + key.replace("./", "")
             };
         });
 
@@ -75,18 +76,28 @@ export default function App() {
         setSelectedSong(data);
         setCurrentIndex(0);
         setIsPlaying(false);
+        clearTimeout(timerRef.current);
     };
 
     const play = () => {
-        if (selectedSong) setIsPlaying(true);
+        if (!selectedSong) return;
+        setIsPlaying(true);
     };
+
+    const pause = () => {
+        setIsPlaying(false);
+        clearTimeout(timerRef.current);
+    };
+
     const stop = () => {
         setIsPlaying(false);
         setCurrentIndex(0);
+        clearTimeout(timerRef.current);
     };
 
     useEffect(() => {
         if (!isPlaying || !selectedSong) return;
+
         if (currentIndex >= selectedSong.notes.length) {
             setIsPlaying(false);
             return;
@@ -98,8 +109,9 @@ export default function App() {
         if (item.left) playSound(item.left);
 
         const duration = (item.duration || 600) / tempo;
+
         timerRef.current = setTimeout(() => {
-            setCurrentIndex(p => p + 1);
+            setCurrentIndex((prev) => prev + 1);
         }, duration);
 
         return () => clearTimeout(timerRef.current);
@@ -115,54 +127,89 @@ export default function App() {
 
     return (
         <div className="container">
-            <h1 style={{textAlign: "center", marginTop: "10px"}}>Piano 61 Keys - Left / Right Hand</h1>
-            {isPlaying && selectedSong && (
+            <h1 style={{textAlign: "center", marginTop: "10px"}}>
+                Piano 61 Keys - Left / Right Hand
+            </h1>
+
+            {selectedSong && (
                 <h2 style={{textAlign: "center", marginTop: "10px"}}>
-                    🎵 Đang phát: {selectedSong.title}
+                    🎵 {isPlaying ? "Đang phát: " : "Đã dừng: "}
+                    {selectedSong.title}
                 </h2>
             )}
+
             <div className="controls">
                 <select onChange={(e) => loadSong(e.target.value)}>
                     <option value="">Chọn bài</option>
                     {songs.map(s => (
-                        <option key={s.file} value={s.file}>{s.name}</option>
+                        <option key={s.file} value={s.file}>
+                            {s.name}
+                        </option>
                     ))}
                 </select>
-                <button onClick={play}>Play</button>
+
+                {!isPlaying ? (
+                    <button onClick={play}>Play</button>
+                ) : (
+                    <button onClick={pause}>Pause</button>
+                )}
+
                 <button onClick={stop}>Stop</button>
+
                 <label>Tempo</label>
-                <input type="range" min="0.5" max="2" step="0.1"
-                       value={tempo}
-                       onChange={(e) => setTempo(parseFloat(e.target.value))}
+                <input
+                    type="range"
+                    min="0.5"
+                    max="2"
+                    step="0.1"
+                    value={tempo}
+                    onChange={(e) => setTempo(parseFloat(e.target.value))}
                 />
             </div>
 
             <div className="piano">
-                {ALL_NOTES.map((note, _idx) => {
+                {ALL_NOTES.map((note) => {
                     if (isBlack(note)) return null;
                     const active = note === activeRight || note === activeLeft;
-                    const handClass = note === activeRight ? "right-hand" : note === activeLeft ? "left-hand" : "";
+                    const handClass =
+                        note === activeRight
+                            ? "right-hand"
+                            : note === activeLeft
+                                ? "left-hand"
+                                : "";
 
                     return (
-                        <div key={note}
-                             className={`white-key ${active ? "active-white" : ""} ${handClass}`}
-                             onClick={() => playSound(note)}
-                        >{note}</div>
+                        <div
+                            key={note}
+                            className={`white-key ${active ? "active-white" : ""} ${handClass}`}
+                            onClick={() => playSound(note)}
+                        >
+                            {note}
+                        </div>
                     );
                 })}
 
                 {ALL_NOTES.map((note, idx) => {
                     if (!isBlack(note)) return null;
                     const active = note === activeRight || note === activeLeft;
-                    const handClass = note === activeRight ? "right-hand" : note === activeLeft ? "left-hand" : "";
+                    const handClass =
+                        note === activeRight
+                            ? "right-hand"
+                            : note === activeLeft
+                                ? "left-hand"
+                                : "";
+
                     const whiteIndex = ALL_NOTES.slice(0, idx).filter(n => !isBlack(n)).length;
 
                     return (
-                        <div key={note}
-                             className={`black-key ${active ? "active-black" : ""} ${handClass}`}
-                             style={{left: whiteIndex * 40 - 12}}
-                             onClick={() => playSound(note)}
-                        >{note}</div>
+                        <div
+                            key={note}
+                            className={`black-key ${active ? "active-black" : ""} ${handClass}`}
+                            style={{left: whiteIndex * 40 - 12}}
+                            onClick={() => playSound(note)}
+                        >
+                            {note}
+                        </div>
                     );
                 })}
             </div>
