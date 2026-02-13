@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/learn-piano-61-keys/static/css/main.70382108.css",
+    "main.js": "/learn-piano-61-keys/static/js/main.8b54e81b.js",
+    "index.html": "/learn-piano-61-keys/index.html",
+    "main.70382108.css.map": "/learn-piano-61-keys/static/css/main.70382108.css.map",
+    "main.8b54e81b.js.map": "/learn-piano-61-keys/static/js/main.8b54e81b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.70382108.css",
+    "static/js/main.8b54e81b.js"
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "title": "Con cò bé bé",
+  "tempo": 80,
+  "notes": [
+    {
+      "right": "G4",
+      "duration": 500
+    },
+    {
+      "right": "D4",
+      "duration": 500
+    },
+    {
+      "right": "C5",
+      "duration": 500
+    },
+    {
+      "right": "C5",
+      "duration": 800
+    },
+    {
+      "right": "C5",
+      "duration": 500
+    },
+    {
+      "right": "E4",
+      "duration": 500
+    },
+    {
+      "right": "G4",
+      "duration": 500
+    },
+    {
+      "right": "A4",
+      "duration": 800
+    },
+    {
+      "right": "A4",
+      "duration": 500
+    },
+    {
+      "right": "A4",
+      "duration": 500
+    },
+    {
+      "right": "E4",
+      "duration": 500
+    },
+    {
+      "right": "E4",
+      "duration": 800
+    },
+    {
+      "right": "D5",
+      "duration": 500
+    },
+    {
+      "right": "C5",
+      "duration": 500
+    },
+    {
+      "right": "A4",
+      "duration": 500
+    },
+    {
+      "right": "A4",
+      "duration": 800
+    },
+    {
+      "right": "C5",
+      "duration": 500
+    },
+    {
+      "right": "C5",
+      "duration": 500
+    },
+    {
+      "right": "C5",
+      "duration": 500
+    },
+    {
+      "right": "E4",
+      "duration": 800
+    },
+    {
+      "right": "C5",
+      "duration": 500
+    },
+    {
+      "right": "A4",
+      "duration": 500
+    },
+    {
+      "right": "C5",
+      "duration": 500
+    },
+    {
+      "right": "D4",
+      "duration": 800
+    },
+    {
+      "right": "D4",
+      "duration": 500
+    },
+    {
+      "right": "G4",
+      "duration": 500
+    },
+    {
+      "right": "A4",
+      "duration": 500
+    },
+    {
+      "right": "C5",
+      "duration": 800
+    },
+    {
+      "right": "D4",
+      "duration": 500
+    },
+    {
+      "right": "A4",
+      "duration": 500
+    },
+    {
+      "right": "G4",
+      "duration": 500
+    },
+    {
+      "right": "G4",
+      "duration": 500
+    },
+    {
+      "right": "F4",
+      "duration": 1000
+    }
+  ]
+}

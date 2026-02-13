@@ -1,0 +1,134 @@
+{
+  "title": "Kìa con bướm vàng",
+  "tempo": 80,
+  "notes": [
+    {
+      "right": "G4",
+      "duration": 500
+    },
+    {
+      "right": "A4",
+      "duration": 500
+    },
+    {
+      "right": "B4",
+      "duration": 500
+    },
+    {
+      "right": "G4",
+      "duration": 800
+    },
+    {
+      "right": "G4",
+      "duration": 500
+    },
+    {
+      "right": "A4",
+      "duration": 500
+    },
+    {
+      "right": "B4",
+      "duration": 500
+    },
+    {
+      "right": "G4",
+      "duration": 800
+    },
+    {
+      "right": "B4",
+      "duration": 500
+    },
+    {
+      "right": "C5",
+      "duration": 500
+    },
+    {
+      "right": "D5",
+      "duration": 800
+    },
+    {
+      "right": "B4",
+      "duration": 500
+    },
+    {
+      "right": "C5",
+      "duration": 500
+    },
+    {
+      "right": "D5",
+      "duration": 800
+    },
+    {
+      "right": "D5",
+      "duration": 500
+    },
+    {
+      "right": "E5",
+      "duration": 500
+    },
+    {
+      "right": "D5",
+      "duration": 500
+    },
+    {
+      "right": "C5",
+      "duration": 500
+    },
+    {
+      "right": "B4",
+      "duration": 500
+    },
+    {
+      "right": "G4",
+      "duration": 800
+    },
+    {
+      "right": "D5",
+      "duration": 500
+    },
+    {
+      "right": "E5",
+      "duration": 500
+    },
+    {
+      "right": "D5",
+      "duration": 500
+    },
+    {
+      "right": "C5",
+      "duration": 500
+    },
+    {
+      "right": "B4",
+      "duration": 500
+    },
+    {
+      "right": "G4",
+      "duration": 800
+    },
+    {
+      "right": "G4",
+      "duration": 500
+    },
+    {
+      "right": "D4",
+      "duration": 500
+    },
+    {
+      "right": "G4",
+      "duration": 800
+    },
+    {
+      "right": "G4",
+      "duration": 500
+    },
+    {
+      "right": "D4",
+      "duration": 500
+    },
+    {
+      "right": "G4",
+      "duration": 1000
+    }
+  ]
+}
