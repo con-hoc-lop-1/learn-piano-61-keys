@@ -1,0 +1,138 @@
+{
+  "title": "Một con vịt",
+  "tempo": 80,
+  "notes": [
+    {
+      "right": "C4",
+      "duration": 500
+    },
+    {
+      "right": "F4",
+      "duration": 500
+    },
+    {
+      "right": "C4",
+      "duration": 800
+    },
+    {
+      "right": "C4",
+      "duration": 500
+    },
+    {
+      "right": "F4",
+      "duration": 500
+    },
+    {
+      "right": "F4",
+      "duration": 500
+    },
+    {
+      "right": "G4",
+      "duration": 500
+    },
+    {
+      "right": "A4",
+      "duration": 800
+    },
+    {
+      "right": "A4",
+      "duration": 500
+    },
+    {
+      "right": "F4",
+      "duration": 500
+    },
+    {
+      "right": "C4",
+      "duration": 800
+    },
+    {
+      "right": "A4",
+      "duration": 500
+    },
+    {
+      "right": "A4",
+      "duration": 500
+    },
+    {
+      "right": "A4",
+      "duration": 500
+    },
+    {
+      "right": "C4",
+      "duration": 500
+    },
+    {
+      "right": "C4",
+      "duration": 500
+    },
+    {
+      "right": "C4",
+      "duration": 800
+    },
+    {
+      "right": "C4",
+      "duration": 500
+    },
+    {
+      "right": "C4",
+      "duration": 500
+    },
+    {
+      "right": "A4",
+      "duration": 800
+    },
+    {
+      "right": "A4",
+      "duration": 500
+    },
+    {
+      "right": "C4",
+      "duration": 500
+    },
+    {
+      "right": "C4",
+      "duration": 500
+    },
+    {
+      "right": "C4",
+      "duration": 500
+    },
+    {
+      "right": "A4",
+      "duration": 800
+    },
+    {
+      "right": "A4",
+      "duration": 500
+    },
+    {
+      "right": "F4",
+      "duration": 500
+    },
+    {
+      "right": "C4",
+      "duration": 800
+    },
+    {
+      "right": "A4",
+      "duration": 500
+    },
+    {
+      "right": "A4",
+      "duration": 500
+    },
+    {
+      "right": "A4",
+      "duration": 500
+    },
+    {
+      "right": "E4",
+      "duration": 500
+    },
+    {
+      "right": "F4",
+      "duration": 1000
+    }
+  ]
+}
