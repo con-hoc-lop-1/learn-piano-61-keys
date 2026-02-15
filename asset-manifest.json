@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/learn-piano-61-keys/static/css/main.70382108.css",
-    "main.js": "/learn-piano-61-keys/static/js/main.a596da48.js",
+    "main.css": "/learn-piano-61-keys/static/css/main.a9f27ada.css",
+    "main.js": "/learn-piano-61-keys/static/js/main.693e976d.js",
     "index.html": "/learn-piano-61-keys/index.html",
-    "main.70382108.css.map": "/learn-piano-61-keys/static/css/main.70382108.css.map",
-    "main.a596da48.js.map": "/learn-piano-61-keys/static/js/main.a596da48.js.map"
+    "main.a9f27ada.css.map": "/learn-piano-61-keys/static/css/main.a9f27ada.css.map",
+    "main.693e976d.js.map": "/learn-piano-61-keys/static/js/main.693e976d.js.map"
   },
   "entrypoints": [
-    "static/css/main.70382108.css",
-    "static/js/main.a596da48.js"
+    "static/css/main.a9f27ada.css",
+    "static/js/main.693e976d.js"
   ]
 }
