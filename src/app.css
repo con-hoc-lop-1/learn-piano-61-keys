@@ -13,12 +13,91 @@
 .piano{
   position:relative;
   display:flex;
-  height:220px;
+  height:140px;
+  background: #f0f0f0;
+  border-top: 2px solid #333;
+  width: fit-content;
+  margin: 50px auto 350px auto;
 }
+
+.falling-notes-container {
+  position: absolute;
+  top: 140px; /* Start below the white keys (140px height) */
+  left: 0;
+  width: 100%;
+  height: 300px;
+  overflow: visible;
+  background: rgba(0,0,0,0.02);
+  pointer-events: none;
+}
+
+.falling-note {
+  position: absolute;
+  top: 0px; /* Start at top of container (which is 140px from piano top) */
+  width: 40px;
+  background: #fde047; /* Yellow-300 */
+  border: 1px solid #eab308;
+  border-radius: 4px;
+  animation: slideUp linear forwards;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #333;
+  transition: background 0.3s, border-color 0.3s, opacity 0.3s, transform 0.05s linear;
+  z-index: 1;
+}
+
+.falling-note.black {
+  width: 24px;
+  background: #f87171; /* Red-400 */
+  border-color: #ef4444;
+  z-index: 3; /* Above white falling notes */
+}
+
+@keyframes slideUp {
+  from { transform: translateY(300px); }
+  to { transform: translateY(-140px); }
+}
+
+.note-sequence {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background: #eee;
+  border-radius: 8px;
+  min-height: 50px;
+  align-items: center;
+}
+
+.note-item {
+  padding: 4px 8px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.note-item:hover {
+  border-color: #888;
+  background: #f9f9f9;
+}
+
+.note-item.active {
+  background: #ffe066;
+  border-color: #fadb14;
+  box-shadow: 0 0 8px rgba(250, 219, 20, 0.5);
+}
+
 
 .white-key{
   width:40px;
-  height:220px;
+  height:140px;
   border:1px solid #ccc;
   background:white;
   display:flex;
@@ -27,12 +106,13 @@
   font-size:10px;
   padding-bottom:5px;
   box-sizing:border-box;
+  z-index: 2; /* Ensure piano keys are interactive but falling notes can go behind or in front if needed */
 }
 
 .black-key{
   position:absolute;
   width:24px;
-  height:140px;
+  height:70px;
   background:black;
   color:white;
   font-size:9px;
@@ -41,7 +121,7 @@
   justify-content:center;
   padding-bottom:5px;
   border-radius:0 0 4px 4px;
-  z-index:2;
+  z-index:4; /* Above white keys and falling notes */
 }
 
 .active-white{
@@ -50,6 +130,33 @@
 
 .active-black{
   background:#ff4d4f;
+}
+
+.active-falling {
+  background: #fadb14 !important;
+  border-color: #333 !important;
+  box-shadow: 0 0 12px rgba(250, 219, 20, 0.9);
+  z-index: 1; /* Nằm dưới phím chính để hiện "bên dưới" */
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.countdown-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  font-weight: bold;
+  color: #fadb14;
+  text-shadow: 0 0 20px rgba(0,0,0,0.5);
+  z-index: 10;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
 }
 
 .right-hand{
@@ -62,7 +169,7 @@
 
 .staff{
   margin:30px 0;
-  height:120px;
+  height:60px;
   position:relative;
   border:1px solid #ddd;
 }
